@@ -11,7 +11,11 @@
 \newcommand{\blackslash}{\text{\textbackslash}}
 \newcommand{\tand}{~\land~}
 \newcommand{\tor}{~\lor~}
+\newcommand{\st}{~.~} % lol it's a face
 \newcommand{\diam}{\mathtt{diam}}
+\newcommand{\prop}{\item \textbf{prop}: }
+\newcommand{\defn}{\item \textbf{def}: }
+\newcommand{\cor}{\item \textbf{cor}: }
 
 \begin{document}
 
@@ -228,6 +232,58 @@ These are things we should be fairly comfortable with.
 
 \item Corollary: Monotonic functions have at most a countable set of jump
   discontinuities [Monotonic functions only have jump disconts.?]
+
+\end{itemize}
+
+\section{Derivative}
+
+\begin{itemize}
+  % notes from 2/12/14 begin ------>
+  \defn $(c, +\infty)$ is a \boxinate{neighborhood of $+\infty$}.
+
+  \defn $(-\infty, c)$ is a \boxinate{neighborhood of $-\infty$}.
+
+  \defn $f : E \subseteq \reals \rightarrow \reals$. \\
+    $t, x \in [-\infty, \infty]$. \\
+    We say \boxinate{$f(t) \rightarrow a$ as $t \rightarrow x$} $\iff$
+    $$\forall \text{ neighborhood } U \text{ of a} \st \exists \text{
+      neighborhood } V \text{ of } x \st V \cap E \neq \emptyset \tand (\forall
+    t \in V \cap E \st f(t) \in U)$$
+
+    For example, $f(t) = t^2$ approaches $x = +\infty$. If we have a
+    neighborhood $U = (c, +\infty)$, then $V = (|c|^{frac 1 2}, +\infty)$ will
+    satisfy that for $t \in V \cap E$, $f(t) \in U$.
+
+  \defn $f' : (a, b) \rightarrow \reals$ is the \boxinate{derivative} of $f
+  \iff$
+
+  $$f'(x) = \lim_{t \rightarrow x} \frac{f(t) - f(x)}{t-x}$$
+
+  If the derivative exists at $x \in (a, b)$, then we say that $f$ is
+  \boxinate{differentiable} at $x$.
+
+  \defn $f : X \rightarrow \reals \st f$ has a \boxinate{local maxima} a $p \in
+  X \iff$
+
+  $$\exists \delta > 0 \st \forall q \in X \tand d(p, q) < \delta \st f(q)
+  \leq f(p)$$
+
+  \prop If $f$ has a local maxima at $p \in X$ and $f'(x)$ exists, then $f'(x)
+  = 0$.
+
+  \prop $f$ and $g$ are differentiable on $(a, b) \implies$
+
+  $$\exists x \in (a, b) \st (f(b) - f(a))g'(x) = (g(b)-g(a))f'(x)$$
+
+  \begin{itemize}
+    \cor $f$ is differentiable on $(a, b) \implies$
+
+    $$\exists x \in (a, b) \st f(b) - f(a) = f'(x)(b - a)$$
+
+    Think intermediate value theorem. There exists a point at which the slope
+    equals the average slope.
+  \end{itemize}
+  % notes from 2/12/14 end <------
 
 \end{itemize}
 
