@@ -346,6 +346,61 @@ These are things we should be fairly comfortable with.
 
   If they are equal, we write $\mathboxinate{f \in \Re(\alpha)}$.
   % notes from 2/24/14 end <------
+  
+  
+
+
+\end{itemize}
+
+%Anik's notes on Frenet 
+
+
+
+\section{Frenet}
+
+\begin{itemize}
+
+\item
+
+\underline{Defitinion:} A curve $\alpha$: [a,b] $\rightarrow \mathbb{R}^n$ is said to be $regular$ if $\alpha'(t) \neq 0 \; \forall t \in [a,b]$
+
+\item A reparametrization of a curve $\gamma$ is a curve $\alpha(t) = \gamma(\phi(t))$ where $\phi$ : [c,d] $\rightarrow$ [a,b] is a smooth bijection.
+
+\item \underline{Proposition:} Any smooth, regular curve $\gamma$ can be reparametrized to have constant speed (if this is true, we say that $\gamma$ is parametrized by arc length)
+
+\item \underline{Theorem:} Let $\alpha$ be a closed regular, smooth curve enclosing on area A. Then, $4\pi A \leq L^2$, where L is the length of $\alpha$.
+
+\item For a fixed curve $\alpha(t)$, the following are the Frenet Formulas: \\ \\
+
+\underline{Unit Tangent Vector:} 
+
+$$ T(t) = \frac{\alpha ^{'}(t)}{||\alpha ^{'}(t)||} $$
+
+\underline{Normal Vector:}
+
+$$ N(t) = \frac{T ^{'}(t)}{||T ^{'}(t)||} $$
+
+\underline{Curvature:}
+
+$$ K(t) = \frac{||T ^{'}(t)||}{||\alpha ^{'}(t)||} $$
+
+\underline{Binormal Vector:}
+
+$$ B(t) = T(t) \; \text{X} \; N(t) $$
+
+\underline{Torsion :}
+
+$$ \tau(t) = N^{'}(t)*B(t) = -N(t)*B^{'}(t) $$
+
+
+\item A space curve is a line $\iff$ its curvature = 0
+
+\item A space curve is planar $\iff$ its torsion = 0.
+
+Morover, the only planar curves with non-zero constant curvature are portions of circles
+
+
+
 
 \end{itemize}
 
