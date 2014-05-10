@@ -52,7 +52,7 @@ These are things we should be fairly comfortable with.
 \section{Sequences} % Brian
 
 \begin{itemize}
-\item $\{p_i\} $ \boxinate{converges} $ \iff \exists p \in X . \forall \epsilon
+\item $\{p_i\} $ \boxinate{converges} to $p$ $ \iff \exists p \in X . \forall \epsilon
   > 0 . \exists n_0 \in \nat . \forall n \geq n_0 . d(p_n, p) < \epsilon$.
 
 \item $\{p_i\}$ is \boxinate{bounded} $ \iff \exists p \in X . \exists m > 0
@@ -63,7 +63,6 @@ These are things we should be fairly comfortable with.
   \item $p_n \rightarrow p \in X \iff \forall r > 0 . |N_r(p) \blackslash
     \{p_n\}|$ is infinite.
 
-  \item $p_n \rightarrow p \tand p_n \rightarrow q \implies p = q$
 
   \item $\{p_i\}$ converges $\implies \{p_i\}$ is bounded.
 
@@ -81,7 +80,7 @@ These are things we should be fairly comfortable with.
 
 \item $p_i \rightarrow p \iff \forall \{p_{n_i}\} . p_{n_i} \rightarrow p$.
 
-\item $X$ is compact and $\{p_i\} \subseteq X \implies \exists \{p_{n_i}\}
+\item (Bolzano Weirstrauss) $X$ is compact and $\{p_i\} \subseteq X \implies \exists \{p_{n_i}\}
   \subseteq X . \exists p \in X . \{p_{n_i}\} \rightarrow p$.
 
 \item $\{p_i\} \subseteq X$ is a \boxinate{Cauchy sequence} $\iff \forall
@@ -89,7 +88,7 @@ These are things we should be fairly comfortable with.
   \epsilon$.
 
 \item $E \subseteq X$, the \boxinate{diameter} of $E$ is
-  $$\diam(E) = \sup_{p, e \in E} d(p, q)$$
+  $$\diam(E) = \sup_{p, q \in E} d(p, q)$$
 
 \item $\diam(\overline{E}) = \diam(E)$
 \item $K_n \supseteq K_{n+1} . K_n \neq \emptyset . K_n$ is compact,
@@ -108,7 +107,7 @@ These are things we should be fairly comfortable with.
 
 \item Compact $\implies$ complete.
 
-\item If $\{a_i\}$ is monotonic, it's bounded $\iff$ it's bounded.
+\item If $\{a_i\}$ is monotonic, it's bounded $\iff$ it converges.
 
 \item Let $\{a_i\} \subseteq \reals^n$ Let
   $$E = \{x \in \reals \cup \{+\infty, -\infty\} : \lim_{k\rightarrow \infty}
@@ -153,7 +152,11 @@ These are things we should be fairly comfortable with.
   E$ is compact)
 \item Prop: Closed subsets of compact sets are compact
 \item Prop: $E \subseteq X$ where $X$ compact and $|E| = \infty$. Then $E$
-  contains a limit point
+  contains a limit point (Heine-Borel)
+\item Defn: $A, B \subseteq X$ are separated if $A \cap \overline{B} = B \cap
+  \overline{A} = \emptyset$. (Connected = Not separated)
+\item $E \subseteq \mathbb{R} \iff ~\forall~x,y \in E$, if $z \in (x, y)$ then
+  $z \in E$
 \item Prop: $\{I_k\}$ a sequence such that $I_{k+1} \subseteq I_k \forall\;k
   \Rightarrow \bigcap I_k \neq \emptyset$
 \item Defn: An $n$ cell is an n-dimensional hypercube defined on $\mathbb{R}^n$
@@ -161,9 +164,9 @@ These are things we should be fairly comfortable with.
   cell contains a ball
 \item Prop: $n$ cells are compact (Proved by contradiction using nested
   quadrants as intervals)
-\item Prop: $\{K_{\alpha}\}$ compact and non-empty $\land\; \bigcup_{\alpha =
-  1}^n K_{\alpha} \neq \emptyset \Rightarrow \bigcup_{\alpha}^{\infty} \neq
-  \emptyset$
+\item Prop: $\{K_{\alpha}\}$ compact and non-empty $\land\; \bigcap_{\alpha =
+  1}^n K_{\alpha} \neq \emptyset \Rightarrow \bigcap_{\alpha}^{\infty}
+  K_{\alpha} \neq \emptyset$
 \item Corollary: $\forall\;j, K_j$ compact and non-empty $\land \;K_{j+1}
   \subseteq K_j \Rightarrow \bigcap_{j=1}^{\infty} K_j \neq
   \emptyset$. Eg. Cantor set
