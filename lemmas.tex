@@ -16,6 +16,7 @@
 \newcommand{\prop}{\item \textbf{prop}: }
 \newcommand{\defn}{\item \textbf{def}: }
 \newcommand{\cor}{\item \textbf{cor}: }
+\newcommand{\mathboxinate}[1]{\text{\boxinate{$#1$}}}
 
 \begin{document}
 
@@ -298,9 +299,53 @@ These are things we should be fairly comfortable with.
   x_n\}$ such that $a = x_0 < x_1 < x_2 < \ldots < x_n = b$.
 
   \defn
+  \begin{align*}
+    \mathboxinate{M_i} &= \sup_{x_{i-1} \leq x \leq x_i} f(x) \\
+    \mathboxinate{m_i} &= \inf_{x_{i-1} \leq x \leq x_i} f(x) \\
+    \mathboxinate{U(P, f)} &= \sum_{i = 1}^n M_i \cdot \Delta x_i \\
+    \mathboxinate{L(P, f)} &= \sum_{i = 1}^n m_i \cdot \Delta x_i
+  \end{align*}
 
-%% \begin{
+  \defn
 
+  \boxinate{upper Riemann integral} is
+
+  $$\overline{\int_a^b} f(x) dx = \inf \{U(P,f) : P \text{ is a partition of }
+  [a,b]\}$$
+
+  \boxinate{lower Riemann integral} is
+
+  $$\underline{\int_a^b} f(x) dx = \sup \{L(P,f) : P \text{ is a partition of }
+  [a,b]\}$$
+
+  If the upper Riemann integral = lower Riemann integrl, then we say $f$ is
+  Reimann integrable.
+
+  \defn
+
+  For $\alpha : [a, b] \rightarrow \reals$ is monotonically increasing,
+
+  $$\mathboxinate{\Delta\alpha_i} = \alpha(x_i) - \alpha(x_{i-1})$$
+
+  Let
+
+  \begin{align*}
+    U(P, f, \alpha) &= \sum_{i=1}^n M_i \cdot \Delta_i \\
+    L(P, f, \alpha) &= \sum_{i=1}^n m_i \cdot \Delta_i
+  \end{align*}
+
+  \defn
+
+  \boxinate{upper Riemann-Stieltgies integral} is
+
+  $$\overline{\int_a^b} f(x) dx = \inf_P U(P, f, \alpha)$$
+
+  \boxinate{lower Riemann-Stieltgies integral} is
+
+  $$\underline{\int_a^b} f(x) dx = \sup_P L(P, f, \alpha)$$
+
+  If they are equal, we write $\mathboxinate{f \in \Re(\alpha)}$.
+  % notes from 2/24/14 end <------
 
 \end{itemize}
 
