@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{amsmath,proof,amsthm,amssymb,color}
+\usepackage{mathrsfs}
 
 \newcommand{\nat}{\mathbb{N}}
 \newcommand{\reals}{\mathbb{R}}
@@ -152,7 +153,7 @@ These are things we should be fairly comfortable with.
   ,\;(\exists\;n.\; E \subseteq \bigcup_{\alpha = 1}^n G_{\alpha} \Rightarrow
   E$ is compact)
 \item Prop: Closed subsets of compact sets are compact
-\item Prop: $E \subseteq X$ where $X$ compact set and $|E| = \infty$. Then $E$ has a limit point in X. 
+\item Prop: $E \subseteq X$ where $X$ compact set and $|E| = \infty$. Then $E$ has a limit point in X.
 \item Defn: $A, B \subseteq X$ are separated if $A \cap \overline{B} = B \cap
   \overline{A} = \emptyset$. (Connected = Not separated)
 \item $E \subseteq \mathbb{R} \iff ~\forall~x,y \in E$, if $z \in (x, y)$ then
@@ -347,7 +348,7 @@ $$ d(f(p),f(q)) < \epsilon $$
 
   $$\underline{\int_a^b} f(x) dx = \sup_P L(P, f, \alpha)$$
 
-  If they are equal, we write $\mathboxinate{f \in \Re(\alpha)}$.
+  If they are equal, we write $\mathboxinate{f \in \mathscr R(\alpha)}$.
   % notes from 2/24/14 end <------
 
 
@@ -368,7 +369,7 @@ $$ d(f(p),f(q)) < \epsilon $$
 
   \prop
 
-  $$f \in \Re(\alpha) on [a,b] \iff \forall \epsilon > 0 \st \exists P \st
+  $$f \in \mathscr R(\alpha) on [a,b] \iff \forall \epsilon > 0 \st \exists P \st
   |U(P, f, \alpha) - L(P, f, \alpha)| < \epsilon$$
 
   \prop continuous $\implies$ integrable on any $\alpha$.
@@ -376,19 +377,19 @@ $$ d(f(p),f(q)) < \epsilon $$
 
   % notes from 2/28/14 start ------>
   \prop $f$ is monotonically increasing $\implies \forall \alpha$ continuous
-  $\st f \in \Re(\alpha)$.
+  $\st f \in \mathscr R(\alpha)$.
 
   \prop \\
   $f$ is bounded on $[a, b]$, and \\
   $f$ has finitely many points of discontinuity, and \\
   $\alpha$ is continuous at the discontinuities of $f$, \\
-  $\implies f \in \Re(\alpha)$.
+  $\implies f \in \mathscr R(\alpha)$.
 
   \prop \\
-  $f \in \Re(\alpha)$ on $[a, b]$, and \\
+  $f \in \mathscr R(\alpha)$ on $[a, b]$, and \\
   $m \leq f(x) \leq M$, and \\
   $\phi$ is continuous on $[m, M]$, \\
-  $\implies \phi \circ f \in \Re(\alpha)$
+  $\implies \phi \circ f \in \mathscr R(\alpha)$
 
   % notes from 2/28/14 end <------
 \end{itemize}
@@ -435,6 +436,24 @@ $$ \tau(t) = N^{'}(t)*B(t) = -N(t)*B^{'}(t) $$
 \item A space curve is planar $\iff$ its torsion = 0.
 
 Morover, the only planar curves with non-zero constant curvature are portions of circles
+
+\end{itemize}
+
+\section{Formulas to Remember}
+
+\begin{itemize}
+  \item Compact $\iff$ every infinite set has a limit point.
+
+  \item Compact on $\reals^n \iff$ closed and bounded.
+
+  \item Compact $\implies$ every sequence contains a convergent subsequence.
+
+  \item If $f : [a, b] \rightarrow \mathbb C$, then $\exists$ a sequence of
+    polynomials $\{p_n\}$ such that $p_n \rightarrow f$ uniformly.
+
+  \item
+    $f$ monotonically increasing and $\alpha$ continuous $\implies f \in
+    \mathscr R(\alpha)$.
 
 \end{itemize}
 
