@@ -47,7 +47,7 @@ These are things we should be fairly comfortable with.
 \item $\{ G_n \}$ open $\implies \bigcup_n G_n$ open
 \item $\{ G_n \}$ closed $\implies \bigcap_n G_n$ closed
 \item $\{ G_n \}_{n=1}^{N}$ open $\implies \bigcap_{n = 1}^N G_n$ open
-\item $\{ G_n \}_{n=1}^{N}$ closed $\implies \bigcup_{n = 1}^N G_n$ closed
+\item $\{ G_n \}_{n=1}^{N}$ closed $\implies \bigcap_{n = 1}^N G_n$ closed
 \end{itemize}
 
 \section{Sequences} % Brian
@@ -112,14 +112,14 @@ These are things we should be fairly comfortable with.
 
 \item Let $\{a_i\} \subseteq \reals^n$ Let
   $$E = \{x \in \reals \cup \{+\infty, -\infty\} : \lim_{k\rightarrow \infty}
-  a_{n_k} = x\} = \mbox{ Set of subsequential limits} $$
+  a_{n_k} = x\}$$
 
   Define
 
   $$\sup E = \overline{\lim_{n\rightarrow\infty}} a_n = \limsup_{n\rightarrow
-    \infty} a_n$$ 
+    \infty} a_n$$
 
-  $$\inf E = \underline{\lim_{n\rightarrow\infty}} a_n = \liminf_{n\rightarrow
+  $$\inf E = \underline{\lim_{n\rightarrow\infty}} a_n = \liminf{n\rightarrow
     \infty} a_n$$
 
 \item $\limsup a_n \in E$.
@@ -128,7 +128,7 @@ These are things we should be fairly comfortable with.
   x$.
 
 \item $p \in \reals^+ \tand a \in \reals \implies$
-  $$\lim_{n \rightarrow \infty} \frac{n^\alpha}{(1+p)^n} = 0$$
+  $$\lim_{n \rightarrow \infty} \frac{n^\alpha}{(1+p)^n}$$
 
 \item $\{a_n\} \subseteq [0, \infty)$.
   $$\sum_{n \in \nat} a_n\text{ converges }\iff \{\sum_{i=1}^n a_i\} \text{ is
@@ -137,12 +137,6 @@ These are things we should be fairly comfortable with.
 \item $a_1 \geq a_2 \geq a_3 \geq \ldots$ and $0 \leq a_i$.
   $$\sum_{k \in \nat} a_k \text{ converges } \iff \sum_{k \in \nat} 2^k a_{2^k}
   \text{ converges}$$
-  Intuition: There are $2^k$ elements between $a_{2^k}$ and $a_{2^{k+1}}$. Since
-  the $a_i$s are close enough together, we can use $a_{2^k}$ to represent the
-  $2^k$ intermediate terms.
-
-\item General note: To solve for limit of sequence $\{ a_i \}$, simply solve
-  $a_i = a_{i+1}$ since $a_i = a_{i+1}$ as $i \to \infty$
 
 \end{itemize}
 
@@ -218,7 +212,11 @@ These are things we should be fairly comfortable with.
 
   $$m = \inf_{p \in X}f(p)$$
 
-\item Prop: If F: X (CMS) $\rightarrow$ Y (CMS) is a cont. bijection, then
+\item Def: Let f be a mapping of a metric space X into MS Y. We say that f is $uniformly \; continuous$ on X if $\forall \epsilon > 0 \; \exists \delta > 0$ such that $\forall p,q \in X$:
+
+$$ d(f(p),f(q)) < \epsilon $$
+
+\item Prop: If F: X (CMS) $\rightarrow$ Y (MS) is a cont. bijection, then
   $F^{-1}$ is cont.
 
 \item Prop: Let F: X (CMS) $\rightarrow$ Y (MS) be a cont. function. Then F is
