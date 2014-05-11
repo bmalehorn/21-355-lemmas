@@ -16,6 +16,7 @@
 \newcommand{\prop}{\item \textbf{prop}: }
 \newcommand{\defn}{\item \textbf{def}: }
 \newcommand{\cor}{\item \textbf{cor}: }
+\newcommand{\mathboxinate}[1]{\text{\boxinate{$#1$}}}
 
 \begin{document}
 
@@ -290,6 +291,151 @@ These are things we should be fairly comfortable with.
     equals the average slope.
   \end{itemize}
   % notes from 2/12/14 end <------
+
+\end{itemize}
+\section{Integration}
+  % notes from 2/24/14 start ------>
+\begin{itemize}
+  \prop $f : [a,b ] \rightarrow \reals^n$ is continuous, and differentiable on
+  $(a, b)$ implies
+
+  $$\exists x \in (a, b) \st |f(b) - f(a)| \leq |f'(x)| (b-a)$$
+
+  \defn A \boxinate{partition} $P$ of $[a, b]$ is finite set $\{x_0, \ldots
+  x_n\}$ such that $a = x_0 < x_1 < x_2 < \ldots < x_n = b$.
+
+  \defn
+  \begin{align*}
+    \mathboxinate{M_i} &= \sup_{x_{i-1} \leq x \leq x_i} f(x) \\
+    \mathboxinate{m_i} &= \inf_{x_{i-1} \leq x \leq x_i} f(x) \\
+    \mathboxinate{U(P, f)} &= \sum_{i = 1}^n M_i \cdot \Delta x_i \\
+    \mathboxinate{L(P, f)} &= \sum_{i = 1}^n m_i \cdot \Delta x_i
+  \end{align*}
+
+  \defn
+
+  \boxinate{upper Riemann integral} is
+
+  $$\overline{\int_a^b} f(x) dx = \inf \{U(P,f) : P \text{ is a partition of }
+  [a,b]\}$$
+
+  \boxinate{lower Riemann integral} is
+
+  $$\underline{\int_a^b} f(x) dx = \sup \{L(P,f) : P \text{ is a partition of }
+  [a,b]\}$$
+
+  If the upper Riemann integral = lower Riemann integrl, then we say $f$ is
+  Reimann integrable.
+
+  \defn
+
+  For $\alpha : [a, b] \rightarrow \reals$ is monotonically increasing,
+
+  $$\mathboxinate{\Delta\alpha_i} = \alpha(x_i) - \alpha(x_{i-1})$$
+
+  Let
+
+  \begin{align*}
+    U(P, f, \alpha) &= \sum_{i=1}^n M_i \cdot \Delta_i \\
+    L(P, f, \alpha) &= \sum_{i=1}^n m_i \cdot \Delta_i
+  \end{align*}
+
+  \defn
+
+  \boxinate{upper Riemann-Stieltgies integral} is
+
+  $$\overline{\int_a^b} f(x) dx = \inf_P U(P, f, \alpha)$$
+
+  \boxinate{lower Riemann-Stieltgies integral} is
+
+  $$\underline{\int_a^b} f(x) dx = \sup_P L(P, f, \alpha)$$
+
+  If they are equal, we write $\mathboxinate{f \in \Re(\alpha)}$.
+  % notes from 2/24/14 end <------
+  
+  
+
+
+
+%Anik's notes on Frenet 
+
+
+
+  % notes from 2/26/14 start ------>
+
+  \defn $P^*$ is a \boxinate{refinement} of $P \iff P^* \supset P$.
+
+  % some fairly obvious lemmas follow about refinements
+
+  \prop
+
+  $$f \in \Re(\alpha) on [a,b] \iff \forall \epsilon > 0 \st \exists P \st
+  |U(P, f, \alpha) - L(P, f, \alpha)| < \epsilon$$
+
+  \prop continuous $\implies$ integrable on any $\alpha$.
+  % notes from 2/26/14 end <------
+
+  % notes from 2/28/14 start ------>
+  \prop $f$ is monotonically increasing $\implies \forall \alpha$ continuous
+  $\st f \in \Re(\alpha)$.
+
+  \prop \\
+  $f$ is bounded on $[a, b]$, and \\
+  $f$ has finitely many points of discontinuity, and \\
+  $\alpha$ is continuous at the discontinuities of $f$, \\
+  $\implies f \in \Re(\alpha)$.
+
+  \prop \\
+  $f \in \Re(\alpha)$ on $[a, b]$, and \\
+  $m \leq f(x) \leq M$, and \\
+  $\phi$ is continuous on $[m, M]$, \\
+  $\implies \phi \circ f \in \Re(\alpha)$
+
+  % notes from 2/28/14 end <------
+\end{itemize}
+
+\section{Frenet}
+
+\begin{itemize}
+
+\item
+
+\underline{Defitinion:} A curve $\alpha$: [a,b] $\rightarrow \mathbb{R}^n$ is said to be $regular$ if $\alpha'(t) \neq 0 \; \forall t \in [a,b]$
+
+\item A reparametrization of a curve $\gamma$ is a curve $\alpha(t) = \gamma(\phi(t))$ where $\phi$ : [c,d] $\rightarrow$ [a,b] is a smooth bijection.
+
+\item \underline{Proposition:} Any smooth, regular curve $\gamma$ can be reparametrized to have constant speed (if this is true, we say that $\gamma$ is parametrized by arc length)
+
+\item \underline{Theorem:} Let $\alpha$ be a closed regular, smooth curve enclosing on area A. Then, $4\pi A \leq L^2$, where L is the length of $\alpha$.
+
+\item For a fixed curve $\alpha(t)$, the following are the Frenet Formulas: \\ \\
+
+\underline{Unit Tangent Vector:} 
+
+$$ T(t) = \frac{\alpha ^{'}(t)}{||\alpha ^{'}(t)||} $$
+
+\underline{Normal Vector:}
+
+$$ N(t) = \frac{T ^{'}(t)}{||T ^{'}(t)||} $$
+
+\underline{Curvature:}
+
+$$ K(t) = \frac{||T ^{'}(t)||}{||\alpha ^{'}(t)||} $$
+
+\underline{Binormal Vector:}
+
+$$ B(t) = T(t) \; \text{X} \; N(t) $$
+
+\underline{Torsion :}
+
+$$ \tau(t) = N^{'}(t)*B(t) = -N(t)*B^{'}(t) $$
+
+
+\item A space curve is a line $\iff$ its curvature = 0
+
+\item A space curve is planar $\iff$ its torsion = 0.
+
+Morover, the only planar curves with non-zero constant curvature are portions of circles
 
 \end{itemize}
 
