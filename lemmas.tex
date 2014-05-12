@@ -18,6 +18,7 @@
 \newcommand{\defn}{\item \textbf{def}: }
 \newcommand{\cor}{\item \textbf{cor}: }
 \newcommand{\mathboxinate}[1]{\text{\boxinate{$#1$}}}
+\newcommand{\intab}{\int_a^b}
 
 \begin{document}
 
@@ -454,6 +455,34 @@ Morover, the only planar curves with non-zero constant curvature are portions of
   \item
     $f$ monotonically increasing and $\alpha$ continuous $\implies f \in
     \mathscr R(\alpha)$.
+
+  \item
+    $\alpha$ increases monotonically and $\alpha' \in \mathscr R \implies$
+    $$\intab f(x) d\alpha = \intab f(x) \alpha'(x) dx$$
+
+  \item Product Rule:
+    $$(f \cdot g)'(x) = f(x) g'(x) + f'(x) g(x)$$
+
+  \item Fractions:
+    $$\left(\frac f g \right)'(x) = \frac{g(x) f'(x) - g'(x)f(x)}{g^2(x)}$$
+
+  \item Chain Rule:
+    $$(f \circ g)' = (f' \circ g) g'$$
+
+  \item
+    If $\alpha(x) = \sum_{n=1}^\infty c_n I(x - s_n)$, \\
+    $\sum_{n=1}^\infty c_n$ converges, \\
+    $s_n \in (a, b)$, \\
+    $I(x) = 1$ if $x \geq 0$ and $0$ if $x < 0$, \\
+    $$\implies \intab f(x) d\alpha = \sum_{n=1}^\infty f(s_n) c_n$$
+
+  %% \item $U(P, f, \alpha) - L(P, f, \alpha) < \epsilon \implies$ for any
+  %%   refinement $P^* \supseteq P$, $U(P^*, f, \alpha) - L(P^*, f, \alpha)$.
+
+  \item Holder's inequality:
+    $$\int \left| f(x) g(x) \right| dx \leq \left(\int |f(x)|^p\right)^{\frac 1
+    p} \left( \int |g(x)|^q\right)^{\frac 1 q}$$
+    so long as $\frac 1 p + \frac 1 q = 1$.
 
 \end{itemize}
 
